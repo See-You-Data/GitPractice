@@ -17,12 +17,24 @@
 # printer('hello',case='upper')
 
 
-def print_func(input,case=None):
-    if case == 'title':
-        print(2 * input.title())
-    elif case == 'upper':
-        print(2 *input.upper())
-    else:
-        print(2 * input)
+def print_func(input_string, case=None):
+    """Function prints an input string with optional argument to specify the case of the printed string.
 
-print_func('hello',case='upper')
+    Parameters
+    ----------
+    input_string : str
+        The string to be printed to screen.
+    case : str / None (Optional)
+        Pass 'title', 'upper' or 'lower' to apply the corresponding string function to the input string before printing.
+    """
+    if case == 'title':
+        print(2 * input_string.title())  # sets the first letter of each word to upper case
+    elif case == 'upper':
+        print(2 * input_string.upper())  # sets string to all upper case
+    elif case == 'lower':
+        print(2 * input_string.lower())  # sets string to all lower case
+    else:
+        print(2 * input_string)  # if no 'case' argument is passed, returns the raw input string printed twice
+
+
+print_func('hello', case='upper')
